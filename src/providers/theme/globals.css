@@ -1,0 +1,14 @@
+:root {
+  --app-body-light: #f7f7f7;
+  --app-body-dark: #00000;
+}
+
+/* For light mode */
+:root[data-mantine-color-scheme="light"] body {
+  --mantine-color-body: var(--app-body-light);
+}
+
+/* For dark mode */
+:root[data-mantine-color-scheme="dark"] body {
+  --mantine-color-body: var(--app-body-dark);
+}

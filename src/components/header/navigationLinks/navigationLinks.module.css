@@ -1,0 +1,54 @@
+.navigationLinks {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-items: right;
+    justify-content: right;
+    align-content: right;
+    align-items: right;
+    justify-content: end;
+    text-align: right;
+    gap: rem(60);
+    padding-top: rem(20);
+    padding-bottom: rem(60);
+
+    @mixin rtl {
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        @media (max-width: $mantine-breakpoint-lg) {
+            justify-items: left;
+            align-content: center;
+            align-items: flex-end;
+            justify-content: start;
+            text-align: left;
+        }
+    }
+
+    @media (min-width: $mantine-breakpoint-lg) {
+        flex-direction: row;
+        justify-items: center;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    @media (max-width: $mantine-breakpoint-lg) {
+        gap: rem(18);
+    }
+    @media (max-width: $mantine-breakpoint-xl) {
+        gap: rem(30);
+    }
+    @media (max-width: $mantine-breakpoint-xl2) {
+        gap: rem(41);
+    }
+    @media (max-width: $mantine-breakpoint-lg) {
+        gap: rem(18);
+    }   
+}
