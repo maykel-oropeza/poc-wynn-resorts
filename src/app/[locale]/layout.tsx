@@ -5,6 +5,7 @@ import { avanirLTStdFont, bigCaslonFont } from "@/providers/theme/fonts";
 import i18nConfig from "../../../i18nConfig";
 import { dir } from 'i18next'
 import '@mantine/core/styles.css';
+import ReactQueryProvider from "@/providers/reactQuery/reactQueryProvider";
 
 export const metadata: Metadata = {
   title: "Wynn Resorts (Test)",
@@ -33,11 +34,13 @@ export default async function RootLayout({
         />
       </head>
       <body className={`${avanirLTStdFont.variable} ${bigCaslonFont.variable} `}>
-        <DirectionProvider detectDirection>
-          <ThemeProvider>
-            {children}
-          </ThemeProvider>
-        </DirectionProvider>
+        <ReactQueryProvider>
+          <DirectionProvider detectDirection>
+            <ThemeProvider>
+              {children}
+            </ThemeProvider>
+          </DirectionProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );
