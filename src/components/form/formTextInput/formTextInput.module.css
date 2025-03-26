@@ -1,0 +1,36 @@
+.textInput * {
+    font-size: var(--mantine-font-size-md);
+    font-weight: 600;
+}
+.textInput .mantine-TextInput-error {
+    font-size: var(--mantine-font-size-md);
+    font-weight: 600;
+}
+.textInput::placeholder {
+    color: var(--mantine-color-customPlaceholder-filled);
+}
+.textInput {
+    width: 100%;
+}
+    
+.customLabel {
+    width: 100%;
+}
+.customError {
+    --input-bd: var(--mantine-color-customError-filled);
+    color: var(--input-bd);
+    padding-top: var(--mantine-spacing-xs);
+    font-size: var(--mantine-font-size-sm);
+    font-weight: 400;
+}
+    
+.customInput[data-variant='default'] {
+    --input-bd: var(--mantine-color-customBorder-filled);
+    border: 1.5px solid var(--input-bd);
+}
+.customInput[data-error='true'] {
+    --input-bd: var(--mantine-color-customError-filled);
+    color: var(--input-bd);
+    border: 1.5px solid var(--input-bd);
+    font-weight: 600;
+}

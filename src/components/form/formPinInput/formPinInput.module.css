@@ -1,0 +1,34 @@
+.input {
+    height: rem(80);
+    width: rem(80); 
+    font-size: rem(48);
+    line-height: rem(60);
+    font-weight: 600;
+    color: var(--mantine-color-colorRed-filled);
+
+    @media (max-width: $mantine-breakpoint-xs) {
+        height: rem(40);
+        width: rem(40); 
+        font-size: rem(18);
+        line-height: rem(10);
+    }
+    
+}
+.input::placeholder {
+    font-size: rem(30); 
+    @media (max-width: $mantine-breakpoint-xs) {
+        font-size: rem(20); 
+    }
+}
+.pinInput {
+    --pin-input-size: rem(80);
+    font-size: rem(48);
+    border-color: var(--mantine-color-colorRed-filled);
+    color: var(--mantine-color-colorRed-filled);
+
+    @media (max-width: $mantine-breakpoint-xs) {
+        --pin-input-size: rem(40);
+        font-size: rem(18);
+    }
+}
+

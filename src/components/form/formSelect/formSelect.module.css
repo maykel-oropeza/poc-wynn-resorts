@@ -1,0 +1,36 @@
+.select label {
+    font-size: rem(14);
+    line-height: rem(20);
+    margin-bottom: rem(6);
+    font-weight: 500;
+    letter-spacing: 3%;
+    font-family: var(--font-bigCaslon);
+}
+.select * [role="option"] {
+    font-size: var(--mantine-font-size-md);
+}
+.select input {
+    border: 1.5px solid var(--mantine-color-customBorder-filled);
+    font-size: var(--mantine-font-size-md);
+    font-weight: 600;
+}
+
+.select input[data-variant='default'] {
+    --input-bd: var(--mantine-color-customBorder-filled);
+    border: 1.5px solid var(--input-bd);
+}
+.select input[data-error='true'] {
+    --input-bd: var(--mantine-color-customError-filled);
+    border: 1.5px solid var(--input-bd);
+}
+
+.customLabel {
+    width: 100%;
+}
+.customError {
+    --input-bd: var(--mantine-color-customError-filled);
+    color: var(--input-bd);
+    padding-top: var(--mantine-spacing-xs);
+    font-size: var(--mantine-font-size-sm);
+    font-weight: 400;
+}
