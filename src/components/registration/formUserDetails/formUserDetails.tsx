@@ -204,7 +204,7 @@ export const FormUserDetails = () => {
                             <Text fz="lg" fw="600">
                                 {t("iAgree")}
                             </Text>
-                            <Text ml={rem(6)} fw="600" c="colorRed">
+                            <Text ml={rem(6)} fw="600" c="colorBrown">
                                 <Link href="/terms-and-conditions" style={{ color: 'inherit', fontWeight: 600 }}>
                                     {t("termsAndConditions")}
                                 </Link>
@@ -212,7 +212,7 @@ export const FormUserDetails = () => {
                             <Text ml={rem(6)} fw="600">
                                 {t("and")}
                             </Text>
-                            <Text ml={rem(6)} c="colorRed">
+                            <Text ml={rem(6)} c="colorBrown">
                                 <Link href="/privacy-policy" style={{ color: 'inherit', fontWeight: 600 }}>
                                     {t("privacy")}
                                 </Link>

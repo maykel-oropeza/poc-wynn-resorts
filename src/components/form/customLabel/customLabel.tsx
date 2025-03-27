@@ -12,7 +12,7 @@ export const CustomLabel = ({ children, required, rightSection, htmlFor }: Custo
     return <Flex justify="space-between" align="center">
         <label htmlFor={htmlFor} className={clasess.label}>
             <Box content="span" className={clasess.labelContent}>{children}</Box>
-            {required && <Box component="span" ml="xs" c="colorRed">*</Box>}
+            {required && <Box component="span" ml="xs" c="colorBrown">*</Box>}
         </label>
         {rightSection}
     </Flex>

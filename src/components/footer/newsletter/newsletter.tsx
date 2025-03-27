@@ -9,7 +9,7 @@ export const Newsletter = () => {
     const { t } = useTranslation();
 
     return (
-        <Flex direction={{ base: "column", xs: "row" }} justify="center" bg="bgSecondary" p={0}>
+        <Flex direction={{ base: "column", xs: "row" }} justify="center" bg="bgFooter" p={0}>
             <Flex direction={{ base: "column", lg: "row" }} w={{ base: "100%", lg: "unset" }} miw="auto" maw={1300} align="center" wrap="wrap">
                 <Box miw="auto" w={{ base: "auto", xl: 330 }} maw={330}>
                     <Title order={4} pb="md" pt="lg" pr="xl">{t("getNewsUpdates")}</Title>
