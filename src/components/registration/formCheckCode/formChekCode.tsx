@@ -26,7 +26,7 @@ export const FormCheckCode = () => {
             code: '',
         },
         validate: {
-            code: (value) => value.length > 3 ? null : "Please enter a valid code"
+            code: (value) => value.length > 3 ? null : t("validationEnterValidCode")
         }
     });
 

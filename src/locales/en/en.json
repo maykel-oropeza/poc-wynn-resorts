@@ -83,5 +83,13 @@
     "diningPageTitle": "Dinning Page",
     "underConstructionPageTitle": "Under Construction Page",
     "error": "Error",
-    "genericError": "Oops! Something went wrong. Please try again."
+    "genericError": "Oops! Something went wrong. Please try again.",
+    "validationEnterValidCode": "Please enter a valid code",
+    "validationEnterFirstName": "Please enter your First Name",
+    "validationEnterLastName": "Please enter your Last Name",
+    "validationEnterGender": "Please enter your Gender.",
+    "validationFormatEmail": "Invalid format Email.",
+    "validationCountry": "Please enter your Country of residency.",
+    "validationEnterPhoneNumber": "Please enter Phone Number.",
+    "validationTermsAndConditions": "You must agree to the Terms and Conditions."
 }

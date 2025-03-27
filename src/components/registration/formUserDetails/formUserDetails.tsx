@@ -36,13 +36,13 @@ export const FormUserDetails = () => {
             termsOfService: false,
         },
         validate: {
-            firstName: (value) => value?.length > 1 ? null : 'Please enter First Name',
-            lastName: (value) => { return value?.length > 1 ? null : 'Please enter Last Name' },
-            gender: (value) => value?.length > 1 ? null : 'Please enter Gender',
-            email: (value) => (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value) ? null : 'Invalid format email'),
-            country: (value) => { return value?.length > 1 ? null : 'Please enter Country of residency' },
-            phoneNumber: (value) => value?.length > 1 ? null : 'Please enter Phone Number',
-            termsOfService: (value) => value ? null : 'Terms and contitions is mandatory',
+            firstName: (value) => value?.length > 1 ? null : t("validationEnterFirstName"),
+            lastName: (value) => { return value?.length > 1 ? null : t("validationEnterLastName") },
+            gender: (value) => value?.length > 1 ? null : t("validationEnterGender"),
+            email: (value) => (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value) ? null : t("validationFormatEmail")),
+            country: (value) => { return value?.length > 1 ? null : t("validationCountry") },
+            phoneNumber: (value) => value?.length > 1 ? null : t("validationEnterPhoneNumber"),
+            termsOfService: (value) => value ? null : t("validationTermsAndConditions"),
         },
     });
 
