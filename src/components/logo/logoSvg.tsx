@@ -3,7 +3,7 @@ interface LogoSvgProps extends React.ComponentPropsWithoutRef<'svg'> {
     colorLogo: string
 }
 
-export function LogoSvg({ size, style, colorLogo, width, height, ...others }: LogoSvgProps) {
+export default function LogoSvg({ size, style, colorLogo, width, height, ...others }: LogoSvgProps) {
     return (
         <svg
             version="1.2"

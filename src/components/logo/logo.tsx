@@ -3,8 +3,10 @@
 import { Flex } from "@mantine/core"
 import { useGetSizes } from "./useGetSizes";
 import { useGetColorLogo } from "./useGetColorLogo";
-import { LogoSvg } from "./logoSvg";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+const LogoSvg = dynamic(() => import("./logoSvg"), { ssr: false })
 
 export const Logo = () => {
 

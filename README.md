@@ -1,4 +1,4 @@
-# Poc Wnn Resorts
+# Poc Wynn Resorts
 
 This is a project created with [Next.js](https://nextjs.org/) with app router + [Mantine](https://mantine.dev/).
 
@@ -17,12 +17,13 @@ This project was built with the following stack:
 
 ### Build and dev scripts
 
+the project uses node v22.11.0, please ensure you have a the version.
+
 To test locally `npm run dev` is the command
 
 - `dev` – start dev server (Dev Mode).
 
-
-To make some test and see how I will look in production try first `npm run build` and then `npm run start`
+To make some test and see how It will look in production try first `npm run build` and then `npm run start`
 
 - `start` – run the bundle for production (this needs a build bundle so be sure you ran a build first).
 - `build` – bundle application for production.
