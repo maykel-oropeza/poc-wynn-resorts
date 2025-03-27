@@ -13,7 +13,7 @@ export const RegistrationContainer = () => {
     const { step, direction, isRegistering } = useRegistration();
 
     return (
-        <Container size="md" pt={rem(60)} pb={rem(55)}>
+        <Container size="md" pt={rem(60)} pb={rem(20)}>
             {isRegistering && <RegistrationHeader />}
             <Box className={`${classes.stepContent} ${direction}`}>
                 {step === 1 && <FormUserDetails />}
