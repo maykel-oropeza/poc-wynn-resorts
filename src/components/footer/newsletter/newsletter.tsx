@@ -27,7 +27,7 @@ export const Newsletter = () => {
                         rightSection={
                             <Button classNames={{
                                 root: classes.buttonNewsletterRoot,
-                            }} size="3xl" variant="outline">JOIN THE NEWSLETTER</Button>
+                            }} size="3xl" variant="outline">{t("joinNewsletter")}</Button>
                         }
                     />
                 </Box>
