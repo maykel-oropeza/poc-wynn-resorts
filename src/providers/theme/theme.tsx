@@ -31,6 +31,7 @@ export const theme = createTheme({
         xs: '0.5rem', // 8px   
         sm: '0.75rem', // 12px
         md: '1rem', // 16px
+        md2: '1.3rem', // 20px
         lg: '1.5rem', // 24px
         xl: '2rem', // 32px
     },
@@ -93,7 +94,9 @@ export const theme = createTheme({
         customSelected: colorsTuple("#7F56D9"),
         customBorderMain: colorsTuple("#383C3E"),
         customPlaceholder: colorsTuple("#B0B0B0"),
+        customGrayMuted: colorsTuple("#565759"),
         colorLightGray: colorsTuple("#AEA9B4"),
+        colorLightGray2: colorsTuple("#999999"),
         surfaceLight1: colorsTuple('#ffffff'),
         surfaceLight2: colorsTuple('#f7f7f7'),
         surfaceLight3: colorsTuple('#f1f3f5'),
