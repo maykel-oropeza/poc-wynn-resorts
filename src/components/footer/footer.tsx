@@ -1,15 +1,13 @@
 'use client'
 
-import { Flex, rem, Text } from "@mantine/core"
+import { Flex, rem } from "@mantine/core"
 import { Newsletter } from "./newsletter/newsletter"
 import { useTranslation } from "react-i18next"
-import Link from "next/link"
 import { Facebook } from "../icons/facebook"
 import { Android } from "../icons/android"
 import { Apple } from "../icons/apple"
 import { Instagram } from "../icons/instagram"
 import { X } from "../icons/x"
-import classes from "./footer.module.css"
 import { LinkFooter } from "./linkFooter/linkFooter"
 import { TextFooter } from "./linkFooter/textFooter"
 

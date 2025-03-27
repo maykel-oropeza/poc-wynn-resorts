@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Button, Combobox, Flex, rem, Text, useCombobox, useDirection, useMantineColorScheme } from "@mantine/core";
+import { Box, Button, Combobox, Flex, rem, Text, useCombobox, useDirection } from "@mantine/core";
 import { ChevronDown } from "../icons/chevronDown";
 import { useTransition } from "react";
 import { useTranslation } from "react-i18next";
@@ -11,7 +11,6 @@ export const LanguageSelector = () => {
 
     const { i18n, ready } = useTranslation();
     const { dir } = useDirection();
-    const { colorScheme } = useMantineColorScheme();
 
     const [, startTransition] = useTransition();
     const pathname = usePathname()
