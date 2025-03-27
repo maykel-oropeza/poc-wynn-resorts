@@ -1,0 +1,10 @@
+.root {
+    @mixin light {
+        color: white;
+      }
+    
+      @mixin dark {
+        color: var(--mantine-color-colorLightGray3-filled);
+      }
+    
+}

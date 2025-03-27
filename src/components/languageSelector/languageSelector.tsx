@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Button, Combobox, Flex, rem, Text, useCombobox, useDirection, useMantineColorScheme } from "@mantine/core";
+import { Box, Button, Combobox, Flex, rem, Text, useCombobox, useDirection } from "@mantine/core";
 import { ChevronDown } from "../icons/chevronDown";
 import { useTransition } from "react";
 import { useTranslation } from "react-i18next";
@@ -11,7 +11,6 @@ export const LanguageSelector = () => {
 
     const { i18n, ready } = useTranslation();
     const { dir } = useDirection();
-    const { colorScheme } = useMantineColorScheme();
 
     const [, startTransition] = useTransition();
     const pathname = usePathname()
@@ -58,19 +57,16 @@ export const LanguageSelector = () => {
         withArrow={false}
         onOptionSubmit={handleSelection}
     >
-        <Combobox.Target>
-            <Button data-testid="trigger" variant="transparent" onClick={handleClickOnTarget}>
-                {
-                    colorScheme &&
-                    <Flex c={colorScheme === "dark" ? "white" : "black"} w={rem(40)} justify="center" align="center" >
-                        <Text fz="sm" fw="600" lh="sm" c="var(--mantine-color-text)" lts={rem(1.7)} mr={dir === "rtl" ? 0 : 'xs'} ml={dir === "rtl" ? 'xs' : 0}>
-                            {languagesSelected}
-                        </Text>
-                        <Box w={rem(14)} c="var(--mantine-color-text)">
-                            <ChevronDown />
-                        </Box>
-                    </Flex>
-                }
+        <Combobox.Target component="div">
+            <Button component="div" data-testid="trigger" variant="transparent" onClick={handleClickOnTarget}>
+                <Flex w={rem(40)} justify="center" align="center" >
+                    <Text fz="sm" fw="600" lh="sm" c="var(--mantine-color-text)" lts={rem(1.7)} mr={dir === "rtl" ? 0 : 'xs'} ml={dir === "rtl" ? 'xs' : 0}>
+                        {languagesSelected}
+                    </Text>
+                    <Box w={rem(14)} c="var(--mantine-color-text)">
+                        <ChevronDown />
+                    </Box>
+                </Flex>
             </Button>
         </Combobox.Target>
 

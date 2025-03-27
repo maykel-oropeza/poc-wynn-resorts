@@ -87,7 +87,8 @@ export const theme = createTheme({
     primaryColor: 'main',
     colors: {
         main: colorsTuple(MAIN_COLOR),
-        colorRed: colorsTuple("#5A3A27"),
+        colorBrown: colorsTuple("#5A3A27"),
+        colorBrownDark: colorsTuple("#0d0704"),
         customError: colorsTuple("#B3261E"),
         customBorder: colorsTuple("#E8E9E9"),
         customGrayBlue: colorsTuple("#667085"),
@@ -97,12 +98,14 @@ export const theme = createTheme({
         customGrayMuted: colorsTuple("#565759"),
         colorLightGray: colorsTuple("#AEA9B4"),
         colorLightGray2: colorsTuple("#999999"),
+        colorLightGray3: colorsTuple("#d7d7d7"),
         surfaceLight1: colorsTuple('#ffffff'),
         surfaceLight2: colorsTuple('#f7f7f7'),
         surfaceLight3: colorsTuple('#f1f3f5'),
         surfaceDark1: colorsTuple('#000000'),
         surfaceDark2: colorsTuple('#1e1e1e'),
         surfaceDark3: colorsTuple('#181818'),
+        surfaceDark4: colorsTuple('#101010'),
         bgPrimary: virtualColor({
             name: 'bgPrimary',
             dark: "surfaceDark2",
@@ -117,7 +120,22 @@ export const theme = createTheme({
             name: 'bgTertiary',
             dark: 'surfaceDark3',
             light: 'surfaceLight1',
-        })
+        }),
+        bgBrown: virtualColor({
+            name: 'bgBrown',
+            dark: 'colorBrownDark',
+            light: 'colorBrown',
+        }),
+        bgFooter: virtualColor({
+            name: 'bgFooter',
+            dark: 'surfaceDark4',
+            light: 'surfaceLight1',
+        }),
+        footerColor: virtualColor({
+            name: 'footerColor',
+            dark: 'colorLightGray3',
+            light: 'white',
+        }),
     },
     cursorType: 'pointer',
     components: {

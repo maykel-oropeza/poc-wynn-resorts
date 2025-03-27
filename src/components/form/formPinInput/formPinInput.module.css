@@ -4,7 +4,7 @@
     font-size: rem(48);
     line-height: rem(60);
     font-weight: 600;
-    color: var(--mantine-color-colorRed-filled);
+    color: var(--mantine-color-colorBrown-filled);
 
     @media (max-width: $mantine-breakpoint-xs) {
         height: rem(40);
@@ -23,8 +23,8 @@
 .pinInput {
     --pin-input-size: rem(80);
     font-size: rem(48);
-    border-color: var(--mantine-color-colorRed-filled);
-    color: var(--mantine-color-colorRed-filled);
+    border-color: var(--mantine-color-colorBrown-filled);
+    color: var(--mantine-color-colorBrown-filled);
 
     @media (max-width: $mantine-breakpoint-xs) {
         --pin-input-size: rem(40);
