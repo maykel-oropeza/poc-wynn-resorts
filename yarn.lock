@@ -832,7 +832,7 @@
   dependencies:
     buffer "^6.0.3"
 
-"@mantine/core@^7.17.2", "@mantine/core@7.17.3":
+"@mantine/core@7.17.3":
   version "7.17.3"
   resolved "https://registry.npmjs.org/@mantine/core/-/core-7.17.3.tgz"
   integrity sha512-N/AfV5eMnfEMx9WzI7AU5pNFBEzAfT/KtE2XDKS+0ht6RifUmolIxyIvoGMYz2yUEsCBMJZqmBq33Rabf5W7Ug==
@@ -844,7 +844,7 @@
     react-textarea-autosize "8.5.6"
     type-fest "^4.27.0"
 
-"@mantine/form@^7.17.2":
+"@mantine/form@7.17.3":
   version "7.17.3"
   resolved "https://registry.npmjs.org/@mantine/form/-/form-7.17.3.tgz"
   integrity sha512-ktERldD8f9lrjjz6wIbwMnNbAZq8XEWPx4K5WuFyjXaK0PI8D+gsXIGKMtA5rVrAUFHCWCdbK3yLgtjJNki8ew==
@@ -852,17 +852,17 @@
     fast-deep-equal "^3.1.3"
     klona "^2.0.6"
 
-"@mantine/hooks@^7.17.2", "@mantine/hooks@7.17.3":
+"@mantine/hooks@7.17.3":
   version "7.17.3"
   resolved "https://registry.npmjs.org/@mantine/hooks/-/hooks-7.17.3.tgz"
   integrity sha512-6o65Rbfl8jd1C1nF9icvungqL0qZViEOmrZgkyKXxBYkC3x91fz4zftwQgNjt1tZHWDNO6Bo4GpRjJyAdwl48g==
 
-"@mantine/modals@^7.17.2":
+"@mantine/modals@7.17.3":
   version "7.17.3"
   resolved "https://registry.npmjs.org/@mantine/modals/-/modals-7.17.3.tgz"
   integrity sha512-ZwNDTmfqyVRPUNl+vtBDbgZ9aVeQw6H+KLDSZxEsIYjc8p6u7FgCQ/FaBpsJOf//Oc7gHTLF0al27AqvW8jmOA==
 
-"@mantine/notifications@^7.17.2":
+"@mantine/notifications@7.17.3":
   version "7.17.3"
   resolved "https://registry.npmjs.org/@mantine/notifications/-/notifications-7.17.3.tgz"
   integrity sha512-MqakDqu/CZzO4arZGpXs3TmGTajqL4xm28vtqW4qWFSU5HZWQ4EosqipqvIJ+swC6YbxNiWvFcfnxxPlHdYk9g==
@@ -2865,6 +2865,16 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   integrity sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==
+
+fsevents@^2.3.2, fsevents@~2.3.2, fsevents@~2.3.3:
+  version "2.3.3"
+  resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz"
+  integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
+
+fsevents@2.3.2:
+  version "2.3.2"
+  resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
+  integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
 function-bind@^1.1.2:
   version "1.1.2"
