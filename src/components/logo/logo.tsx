@@ -1,23 +1,23 @@
 'use client'
 
-import { Flex, useMantineColorScheme } from "@mantine/core"
+import { Flex } from "@mantine/core"
 import { useGetSizes } from "./useGetSizes";
-import { useGetSrc } from "./useGetSrc";
-import Link from "next/link";
+import { useGetColorLogo } from "./useGetColorLogo";
 import { LogoSvg } from "./logoSvg";
+import Link from "next/link";
 
 export const Logo = () => {
 
     const { height, width } = useGetSizes();
-    const logoSrc = useGetSrc();
-    const { colorScheme } = useMantineColorScheme();
+    const colorLogo = useGetColorLogo();
 
     return <Flex p="0" m="0" h={height} justify="center" align="center">
         <Link href="/">
             <LogoSvg
+                suppressHydrationWarning
                 width={`${width}px`}
                 height={`${height}px`}
-                colorLogo={colorScheme === "light" ? "#775c3d" : "white"}
+                colorLogo={colorLogo}
             />
         </Link>
     </Flex>
