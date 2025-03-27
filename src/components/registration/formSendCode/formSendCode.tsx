@@ -10,7 +10,7 @@ import { useOtpRequestCode } from "@/services/useOtpRequestCode";
 
 export const FormSendCode = () => {
     const { t } = useTranslation();
-    const { nextStep, prevStep, userDetails, setSentCodeMethod, sentCodeMethod } = useRegistration();
+    const { nextStep, prevStep, userDetails, setSentCodeMethod, sentCodeMethod, showNotificationSendCode } = useRegistration();
     const { requestCode, isPending } = useOtpRequestCode();
 
     const handlePrevStep = () => {
@@ -30,6 +30,7 @@ export const FormSendCode = () => {
                 method: sentCodeMethod!,
                 data,
             }).then(() => {
+                showNotificationSendCode?.();
                 nextStep();
             });
         }
@@ -57,7 +58,7 @@ export const FormSendCode = () => {
                 </Radio.Group>
             </Flex>
             <Flex gap="lg" mt={rem(40)} w="100%">
-                <Button w="100%" size="4xl" mb="xs" variant="outline" onClick={handlePrevStep}>
+                <Button w="100%" size="4xl" mb="xs" variant="outline" onClick={handlePrevStep} disabled={isPending}>
                     <Text fz="lg" lh={rem(24)} lts={rem(1)} fw="600">{t("back")}</Text>
                 </Button>
                 <Button w="100%" size="4xl" mb="xs" variant="filled" onClick={handleNextStep} loading={isPending}>

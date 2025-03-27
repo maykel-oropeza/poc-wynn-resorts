@@ -8,14 +8,17 @@ import { useTranslation } from "react-i18next";
 import { useRegistration } from "../registrationProvider";
 import { useOtpCheckCode } from "@/services/useOtpCheckCode";
 import { useRegisterUser } from "@/services/useRegisterUser";
+import { useOtpResendCode } from "@/services/useOtpResendCode";
+import { notifications } from "@mantine/notifications";
 
 
 export const FormCheckCode = () => {
     const { t } = useTranslation();
 
-    const { nextStep, prevStep, userDetails, sentCodeMethod } = useRegistration();
+    const { nextStep, prevStep, userDetails, sentCodeMethod, keyTranslationchechMethod } = useRegistration();
     const { checkCode, isPending: isCheckinCode } = useOtpCheckCode();
     const { registerUser, isPending: isRegisteringUser } = useRegisterUser();
+    const { resendCode } = useOtpResendCode()
 
     const form = useForm({
         mode: 'uncontrolled',
@@ -27,8 +30,29 @@ export const FormCheckCode = () => {
         }
     });
 
+    const showNotificationSendCode = () => {
+        if (sentCodeMethod) {
+            notifications.show({
+                title: t("otpNotification"),
+                message: t("otpNotificationSent", { method: t(keyTranslationchechMethod) }),
+            })
+        }
+    }
+
     const handleResendCode = () => {
-        // TODO handle Resend Code
+        const methodMap = {
+            email: userDetails?.email,
+            phone: userDetails?.phoneNumber,
+        };
+
+        const data = methodMap[sentCodeMethod as keyof typeof methodMap];
+
+        if (data) {
+            resendCode({
+                method: sentCodeMethod!,
+                data,
+            }).then(showNotificationSendCode);
+        }
     }
 
     const handlePrevStep = () => {
@@ -60,6 +84,8 @@ export const FormCheckCode = () => {
 
     return (
         <Flex direction="column" w="100%">
+
+
             <TitleSection>{t("otpVerification")}</TitleSection>
             <Flex direction="column" mt="xl" bg="bgTertiary" justify="center" align="center" p={{ base: "md", sm: "lg" }}>
                 <Title mb="md" lh={rem(30)} order={2}>{t("pleaseCheckYourEmail", { phoneOrEmail: sentCodeMethod === "email" ? t("checkEmail") : t("checkPhone") })}</Title>
@@ -83,7 +109,7 @@ export const FormCheckCode = () => {
                 </Flex>
             </Flex>
             <Flex gap="lg" mt={rem(40)} w="100%">
-                <Button w="100%" size="4xl" mb="xs" variant="outline" onClick={handlePrevStep}>
+                <Button w="100%" size="4xl" mb="xs" variant="outline" onClick={handlePrevStep} disabled={isCheckinCode || isRegisteringUser}>
                     <Text fz="lg" lh={rem(24)} lts={rem(1)} fw="600">{t("back")}</Text>
                 </Button>
                 <Button w="100%" size="4xl" mb="xs" variant="filled" onClick={completeRegister} loading={isCheckinCode || isRegisteringUser}>

@@ -1,3 +1,4 @@
+import { Footer } from "@/components/footer/footer";
 import { Header } from "@/components/header";
 import { Registration } from "@/components/registration/registration";
 import TranslationsProvider from "@/providers/translations/translatiosProvider";
@@ -21,6 +22,7 @@ export default async function Home(props: HomeProps) {
       <TranslationsProvider locale={locale}>
         <Header />
         <Registration />
+        <Footer />
       </TranslationsProvider >
     </div>
   );

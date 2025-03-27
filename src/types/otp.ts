@@ -3,6 +3,8 @@ export interface RequestCode {
     data: string;
 }
 
+export type ResendCodeRequest = RequestCode;
+
 export interface CheckCodeRequest {
     code: number;
 }

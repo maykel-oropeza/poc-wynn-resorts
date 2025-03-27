@@ -1,0 +1,30 @@
+.inputNewsletter {
+    height: rem(72);
+    color: var(--mantine-color-colorLightGray2-filled);
+    font-weight: 600;
+    font-size: var(--mantine-font-size-sm);
+    line-height: 1.5;
+    padding-inline-start: var(--mantine-spacing-md2);
+    padding-inline-end: rem(242);
+}
+
+.inputNewsletterSection {
+    width: rem(242);
+}
+
+.buttonNewsletterRoot {
+    padding: 0;
+    width: rem(222);
+    font-size: var(--mantine-font-size-sm);
+    letter-spacing: rem(0.73);
+}
+
+.inputNewsletter input[data-variant='default'] {
+    --input-bd: var(--mantine-color-customBorder-filled);
+    border: 1.5px solid var(--input-bd);
+}
+
+.inputNewsletter input[data-error='true'] {
+    --input-bd: var(--mantine-color-customError-filled);
+    border: 1.5px solid var(--input-bd);
+}

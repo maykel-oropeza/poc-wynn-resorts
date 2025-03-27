@@ -3,10 +3,14 @@
 import { SendCodeMethod } from '@/types/otp';
 import { UserDetails } from '@/types/user';
 import React, { createContext, useState, useContext, ReactNode, useMemo } from 'react';
+import { notifications } from '@mantine/notifications';
+import { useTranslation } from 'react-i18next';
+
+type keyTranslationchechMethod = "checkEmail" | "checkPhone";
 
 // Step context types
 interface RegistrationType {
-    isRegistering: boolean,
+    isRegistering: boolean;
     step: number;
     direction: 'forward' | 'backward';
     nextStep: () => void;
@@ -15,12 +19,15 @@ interface RegistrationType {
     setUserDetails: (user: UserDetails) => void;
     sentCodeMethod?: SendCodeMethod;
     setSentCodeMethod: (method: SendCodeMethod) => void;
+    keyTranslationchechMethod: keyTranslationchechMethod;
+    showNotificationSendCode?: () => void;
 }
 
 const totalStep = 4;
 
 // Initial context value
 const defaultContextValue: RegistrationType = {
+    keyTranslationchechMethod: "checkEmail",
     isRegistering: true,
     step: 1,
     direction: 'forward',
@@ -39,7 +46,7 @@ interface StepProviderProps {
 }
 
 export const RegistrationProvider: React.FC<StepProviderProps> = ({ children }) => {
-
+    const { t } = useTranslation();
     const [step, setStep] = useState<number>(defaultContextValue.step);
     const [userDetails, setUserDetails] = useState<UserDetails>();
 
@@ -47,6 +54,7 @@ export const RegistrationProvider: React.FC<StepProviderProps> = ({ children }) 
     const [direction, setDirection] = useState<'forward' | 'backward'>('forward');
 
     const isRegistering = useMemo(() => step < totalStep, [step]);
+    const keyTranslationchechMethod: keyTranslationchechMethod = useMemo(() => sentCodeMethod === "email" ? "checkEmail" : "checkPhone", [sentCodeMethod]);
 
     const nextStep = () => {
         if (isRegistering) {
@@ -62,6 +70,16 @@ export const RegistrationProvider: React.FC<StepProviderProps> = ({ children }) 
         }
     };
 
+
+    const showNotificationSendCode = () => {
+        if (sentCodeMethod) {
+            notifications.show({
+                title: t("otpNotification"),
+                message: t("otpNotificationSent", { method: t(keyTranslationchechMethod) }),
+            })
+        }
+    }
+
     const providerStore = {
         isRegistering,
         step,
@@ -71,7 +89,9 @@ export const RegistrationProvider: React.FC<StepProviderProps> = ({ children }) 
         userDetails,
         setUserDetails,
         sentCodeMethod,
-        setSentCodeMethod
+        setSentCodeMethod,
+        keyTranslationchechMethod,
+        showNotificationSendCode
     }
 
     return (

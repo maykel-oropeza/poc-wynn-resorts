@@ -18,7 +18,7 @@ export default async function Page(props: PageProps) {
         <div>
             <TranslationsProvider locale={locale}>
                 <Header />
-                <UnderConstruction keyTranslationTitle="meetingsAndEventsPageTitle" />
+                <UnderConstruction keyTranslationTitle="underConstructionPageTitle" />
                 <Footer />
             </TranslationsProvider >
         </div>

@@ -118,7 +118,7 @@ export const FormUserDetails = () => {
     }
 
     return (
-        <Flex w="100%" direction="column" mb={rem(120)}>
+        <Flex w="100%" direction="column" mb={rem(40)}>
             <TitleSection mb={rem(20)}>{t("personalInfo")}</TitleSection>
             <form style={{ width: '100%' }} autoComplete="off">
                 <Flex w="100%" gap="lg" direction="column">
