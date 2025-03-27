@@ -64,8 +64,22 @@
     "wynnMacau": "Wynn Macau",
     "wynnLasVegas": "Wynn and Encore Las Vegas",
     "bussinesAddress": "3131 Las Vegas Blvd. Las Vegas, NV 89109",
+    "phoneNumberFooter": "+1 (702) 770-7000",
+    "connectWithUs": "Connect with us.",
     "dontSellMyData": "Do Not Sell Or Share My Data",
     "copyRight": "© {{year}} Wynn Resorts Holdings, LLC. All rights reserved.",
     "notingFound": "Nothing found",
-    "searchLabel": "Search"
+    "searchLabel": "Search",
+    "otpNotification": "Otp Notifications",
+    "otpNotificationSent": "The code has been sent. Please check your {{method}}.",
+    "sectionUnderConstruction": "This section is under construction.",
+    "roomAndSuitesPageTitle": "Rooms and Suites Page",
+    "privacyPolicyPageTitle": "Privacy Policy Page",
+    "entertainmentPageTitle": "Entertainment Page",
+    "meetingsAndEventsPageTitle": "Meetings and Events Page",
+    "offersPageTitle": "Offers Page",
+    "termsAndConditionsPageTitle": "Terms and Conditions Page",
+    "wyndAndRewardsPageTitle": "Wynn and Rewards Page",
+    "diningPageTitle": "Dinning Page",
+    "underConstructionPageTitle": "Under Construction Page"
 }
