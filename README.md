@@ -18,13 +18,16 @@ This project was built with the following stack:
 Before starting, you need to have Node.js and npm (Node Package Manager) installed on your computer. If you don't have them yet, you can download and install Node.js from https://nodejs.org. Installing Node.js will also install npm.
 the project uses node v22.11.0
 
-you can do so with the `npm install` command. This installs all the dependencies listed in the package.json file.
+1) Clone the repository
+2) Go to the folder cloned
+3) Install the dependencies with `npm install` command. This installs all the dependencies listed in the package.json file.
+4) execute the comamnd `npm run dev` this should start the server in your local machine.
 
 ## npm scripts
 
 ### Build and dev scripts
 
-the project uses node v22.11.0, please ensure you have a the version.
+the project uses node v22.11.0, please ensure you have that specifc version you can use [NVM](https://github.com/nvm-sh/nvm) or [fnm](https://github.com/Schniz/fnm) to support multiples versions of node in you local machine.
 
 To test locally `npm run dev` is the command
 
@@ -89,7 +92,7 @@ To make some test and see how It will look in production try first `npm run buil
 
 ## Features
 
-The theme selector was not part of the initial scope, but a mechanism was implemented to change the theme with a button in the UI, the way to change between themes is through the combination of keys `ctrl+t`. 
+The theme selector was not part of the initial scope, but a mechanism was implemented to change the theme without a button in the UI, the way to change between themes is through the combination of keys `ctrl+t`. 
 
 <img width="2056" alt="Screenshot 2025-03-27 at 4 39 30 PM" src="https://github.com/user-attachments/assets/08bed249-efc7-4326-996b-fce3dc21b3c8" />
 
