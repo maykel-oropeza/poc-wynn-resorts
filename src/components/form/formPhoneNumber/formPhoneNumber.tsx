@@ -1,6 +1,6 @@
 'use client'
 
-import { useId, useMemo, useState } from "react"
+import { useCallback, useId, useMemo, useState } from "react"
 import { Box, Combobox, Flex, Group, InputBase, rem, ScrollArea, useCombobox } from "@mantine/core"
 import { UseFormReturnType } from "@mantine/form/lib/types"
 import { useTranslation } from "react-i18next"
@@ -12,6 +12,7 @@ import { CustomLabel } from "../customLabel/customLabel"
 import classes from './formPhoneNumber.module.css'
 import { SelectChevronDown } from "@/components/icons/selectChevronDown"
 import { Check } from "@/components/icons/check"
+import { Masks, masks } from "./masks"
 
 interface FormPhoneNumberProp {
     keyForm: string;
@@ -28,6 +29,7 @@ export const FormPhoneNumber = ({ keyForm, form, inputRequired, labelText, infoE
     const id = useId();
     const { getImgSrc } = useCountry();
     const [countrySelected, setCountrySelected] = useState(defaultCountrySelected);
+    const [phoneCode, setPhoneCode] = useState(countries[defaultCountrySelected as keyof TCountries].phone);
     const [imgSrcCountrySelected, setImgSrcCountrySelected] = useState<string | null>(getImgSrc(defaultCountrySelected));
 
     const [search, setSearch] = useState('');
@@ -75,6 +77,7 @@ export const FormPhoneNumber = ({ keyForm, form, inputRequired, labelText, infoE
     const handleOnSelectCombobox = (country: string) => {
         handleOnChange(country);
         setCountrySelected(country);
+        setPhoneCode(countries[country as keyof TCountries].phone)
         combobox.closeDropdown();
         form.setFieldValue(keyForm, country)
         setTimeout(() => setOpened(false), 100)
@@ -100,6 +103,17 @@ export const FormPhoneNumber = ({ keyForm, form, inputRequired, labelText, infoE
             <SelectChevronDown style={{ marginInlineStart: rem(8), width: rem(16), color: 'var(--mantine-color-text)' }} />
         </Flex>
     )
+
+    const getMask = useCallback((countrySelected: string) => {
+        return String(masks[String(countrySelected) as keyof Masks].mask)
+    }, [])
+
+    const generatePlaceholder = useCallback((countrySelected: string) => {
+        return getMask(countrySelected)
+            .replaceAll("0", "_")
+            .replaceAll("[", "")
+            .replaceAll("]", "")
+    }, [])
 
     return (
         <Combobox
@@ -130,8 +144,8 @@ export const FormPhoneNumber = ({ keyForm, form, inputRequired, labelText, infoE
                         size="lg"
                         w="100%"
                         component={IMaskInput}
-                        mask="+971 (0000) - 00000"
-                        placeholder="+971 (____) - _____"
+                        mask={getMask(countrySelected)}
+                        {...phoneCode && { placeholder: generatePlaceholder(countrySelected) }}
                         key={form.key(keyForm)}
                         {...form.getInputProps(keyForm)}
                     />
