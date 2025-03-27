@@ -1,4 +1,6 @@
+import { Footer } from "@/components/footer/footer";
 import { Header } from "@/components/header";
+import { UnderConstruction } from "@/components/underConstruction/underConstruction";
 import TranslationsProvider from "@/providers/translations/translatiosProvider";
 
 interface Params {
@@ -16,6 +18,8 @@ export default async function Page(props: PageProps) {
         <div>
             <TranslationsProvider locale={locale}>
                 <Header />
+                <UnderConstruction keyTranslationTitle="diningPageTitle" />
+                <Footer />
             </TranslationsProvider >
         </div>
     );

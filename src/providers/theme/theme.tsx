@@ -1,12 +1,43 @@
-import { Box, Button, colorsTuple, createTheme, rem, useMantineColorScheme, virtualColor } from "@mantine/core";
+import { Box, Button, Container, colorsTuple, createTheme, rem, useMantineColorScheme, virtualColor } from "@mantine/core";
 import { useHotkeys } from "@mantine/hooks";
 import classes from './button.module.css';
 
-const mainColor = '#006F62';
+const MAIN_COLOR = '#006F62';
+
+const CONTAINER_SIZES: Record<string, number> = {
+    xxs: 315,
+    xs: 420,
+    sm: 525,
+    md: 630,
+    lg: 735,
+    xl: 840,
+    xxl: 945,
+};
 
 export const theme = createTheme({
+    fontSizes: {
+        xs: rem(11),
+        xs2: rem(12),
+        sm: rem(14),
+        md: rem(15.5),
+        lg: rem(16),
+        xl: rem(21),
+        xl2: rem(24),
+        xl3: rem(37)
+    },
+    spacing: {
+        xs3: '0.25rem', // 4px 
+        xs2: '0.375', // 6px 
+        xs: '0.5rem', // 8px   
+        sm: '0.75rem', // 12px
+        md: '1rem', // 16px
+        md2: '1.3rem', // 20px
+        lg: '1.5rem', // 24px
+        xl: '2rem', // 32px
+    },
     breakpoints: {
-        xxs: '20em', // 320px
+        xs3: '20em', // 320px
+        xs2: '23.563em', // 375
         xs: '30em', // 480px
         sm: '48em', // 768px
         md: '64em', // 1024px
@@ -34,7 +65,7 @@ export const theme = createTheme({
             h3: {
                 fontSize: rem(22),
                 fontWeight: "500",
-                lineHeight: "1.5",
+                lineHeight: "1.22",
             },
             h4: {
                 fontSize: rem(21),
@@ -55,13 +86,23 @@ export const theme = createTheme({
     },
     primaryColor: 'main',
     colors: {
-        main: colorsTuple(mainColor),
+        main: colorsTuple(MAIN_COLOR),
+        colorRed: colorsTuple("#5A3A27"),
+        customError: colorsTuple("#B3261E"),
+        customBorder: colorsTuple("#E8E9E9"),
+        customGrayBlue: colorsTuple("#667085"),
+        customSelected: colorsTuple("#7F56D9"),
+        customBorderMain: colorsTuple("#383C3E"),
+        customPlaceholder: colorsTuple("#B0B0B0"),
+        customGrayMuted: colorsTuple("#565759"),
+        colorLightGray: colorsTuple("#AEA9B4"),
+        colorLightGray2: colorsTuple("#999999"),
         surfaceLight1: colorsTuple('#ffffff'),
         surfaceLight2: colorsTuple('#f7f7f7'),
         surfaceLight3: colorsTuple('#f1f3f5'),
         surfaceDark1: colorsTuple('#000000'),
         surfaceDark2: colorsTuple('#1e1e1e'),
-        surfaceDark3: colorsTuple('#353535'),
+        surfaceDark3: colorsTuple('#181818'),
         bgPrimary: virtualColor({
             name: 'bgPrimary',
             dark: "surfaceDark2",
@@ -72,19 +113,13 @@ export const theme = createTheme({
             dark: 'surfaceDark1',
             light: 'surfaceLight1',
         }),
+        bgTertiary: virtualColor({
+            name: 'bgTertiary',
+            dark: 'surfaceDark3',
+            light: 'surfaceLight1',
+        })
     },
-
     cursorType: 'pointer',
-    fontSizes: {
-        xs: rem(11),
-        xs2: rem(12),
-        sm: rem(14),
-        md: rem(15.5),
-        lg: rem(16),
-        xl: rem(21),
-        xl2: rem(24),
-        xl3: rem(37)
-    },
     components: {
         Button: Button.extend({
             classNames: classes,
@@ -108,6 +143,18 @@ export const theme = createTheme({
                 return { root: {} };
             },
         }),
+        Container: Container.extend({
+            vars: (_, { size, fluid }) => ({
+                root: {
+                    '--container-size': fluid
+                        ? '100%'
+                        : size !== undefined && size in CONTAINER_SIZES
+                            ? rem(CONTAINER_SIZES[size])
+                            : rem(size),
+                },
+            }),
+        }),
+
     },
 });
 

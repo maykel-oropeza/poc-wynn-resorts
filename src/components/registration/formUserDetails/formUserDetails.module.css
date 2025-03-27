@@ -1,0 +1,39 @@
+.step-content {
+    opacity: 0;
+    animation: fadeInOut 2.5s ease-out forwards;
+  }
+  
+  .step-content.forward {
+    animation: fadeIn 2.5s ease-out forwards;
+  }
+  
+  .step-content.backward {
+    animation: fadeOut 2.5s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }

@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Poc Wynn Resorts
 
-## Getting Started
+This is a project created with [Next.js](https://nextjs.org/) with app router + [Mantine](https://mantine.dev/).
 
-First, run the development server:
+## Stack Tech
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This project was built with the following stack:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Nextjs](https://nextjs.org/)
+- [PostCSS](https://postcss.org/) with [mantine-postcss-preset](https://mantine.dev/styles/postcss-preset)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React Query](https://tanstack.com/) + [Axios](https://axios-http.com/docs/intro) 
+- [Vitest](https://vitest.dev/) setup with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
+- ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## npm scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Build and dev scripts
 
-## Learn More
+the project uses node v22.11.0, please ensure you have a the version.
 
-To learn more about Next.js, take a look at the following resources:
+To test locally `npm run dev` is the command
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `dev` – start dev server (Dev Mode).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To make some test and see how It will look in production try first `npm run build` and then `npm run start`
 
-## Deploy on Vercel
+- `start` – run the bundle for production (this needs a build bundle so be sure you ran a build first).
+- `build` – bundle application for production.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Testing scripts
+
+- `test` – runs vitest tests (just once).
+- `test:watch` – starts test in watch mode (Await until one test is modified).
+
+### Other scripts
+
+- `lint` – runs ESLint
+
+
+## Features
+
+- Internationalization Selector (By default is taking the most popular 15 languages) taking en consideration the route.
+  <img width="2056" alt="Screenshot 2025-03-27 at 3 53 29 PM" src="https://github.com/user-attachments/assets/57f05940-0070-413d-b069-a6b3a7345199" />
+
+- Defaults links will redirect to under construction sections.
+  <img width="2056" alt="Screenshot 2025-03-27 at 3 54 08 PM" src="https://github.com/user-attachments/assets/70b6412d-ac93-4b28-b2e0-63bd1a229474" />
+
+- Form Register Step 1.
+  ![Wynn-Resorts-Test--03-27-2025_03_57_PM](https://github.com/user-attachments/assets/99d7b723-b193-4195-a862-200fa8213336)
+
+- Form Register Errors  
+  ![Wynn-Resorts-Test--03-27-2025_03_58_PM](https://github.com/user-attachments/assets/6653a4c3-e744-4557-acf3-66ae51b08b87)
+
+- Form Register Step 2
+  By default it's selected email option.
+
+  ![Wynn-Resorts-Test--03-27-2025_04_00_PM](https://github.com/user-attachments/assets/dc0a2976-3f98-46b4-9691-b816152a4e9e)
+
+  A notification will apear once the request with the mock respond with 200 success code.
+  <img width="2056" alt="Screenshot 2025-03-27 at 4 03 09 PM" src="https://github.com/user-attachments/assets/2b9cc8a9-faf9-4abf-b9ea-c5194a717add" />
+
+- Form Register Step 3.
+  Important Note: Since we don't have a real backend implementation you can use any code of 4 digits to complete the registration
+  <img width="2056" alt="Screenshot 2025-03-27 at 4 07 44 PM" src="https://github.com/user-attachments/assets/59d13de3-7fb7-4805-8fcf-4ab7743b36f1" />
+
+  Note: you can click in the link to resend the code, this will hit the server again for a new code, you can see the request in the network, again any code of 4 digits will work.
+
+  once the code is verified in the system (faking right now this part, the system is now able to thegister the user and comple the registration).
+  
+- Success completition of the form.
+  <img width="2056" alt="Screenshot 2025-03-27 at 4 05 24 PM" src="https://github.com/user-attachments/assets/a98b5753-8af9-4137-a5e9-9000dfcf812b" />
+
+  
+
+

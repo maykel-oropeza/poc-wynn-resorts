@@ -1,4 +1,6 @@
+import { Footer } from "@/components/footer/footer";
 import { Header } from "@/components/header";
+import { Registration } from "@/components/registration/registration";
 import TranslationsProvider from "@/providers/translations/translatiosProvider";
 
 import '@mantine/core/styles.css';
@@ -19,6 +21,8 @@ export default async function Home(props: HomeProps) {
     <div>
       <TranslationsProvider locale={locale}>
         <Header />
+        <Registration />
+        <Footer />
       </TranslationsProvider >
     </div>
   );

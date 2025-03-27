@@ -1,0 +1,7 @@
+.titleSection {
+    display: inline-block;
+    width: max-content;
+    padding-bottom: var(--mantine-spacing-xs);
+    padding-inline-end: rem(21);
+    border-bottom: 1px solid var(--mantine-color-text);
+}

@@ -1,0 +1,10 @@
+.radio {
+    border: 1px solid var(--mantine-color-customBorderMain-filled);
+}
+.radio:checked {
+    border: 1px solid var(--mantine-color-customBorderMain-filled);
+    background-color: var(--mantine-color-main-filled);
+}
+.icon {
+    color: var(--mantine-color-main-filled)
+}

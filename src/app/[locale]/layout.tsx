@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { ColorSchemeScript, DirectionProvider, mantineHtmlProps } from '@mantine/core';
 import { ThemeProvider } from "@/providers//theme/themeProvider";
 import { avanirLTStdFont, bigCaslonFont } from "@/providers/theme/fonts";
-import i18nConfig from "../../../i18nConfig";
 import { dir } from 'i18next'
+import ReactQueryProvider from "@/providers/reactQuery/reactQueryProvider";
+import i18nConfig from "../../../i18nConfig";
 import '@mantine/core/styles.css';
+import '@mantine/notifications/styles.css';
 
 export const metadata: Metadata = {
   title: "Wynn Resorts (Test)",
@@ -33,11 +35,13 @@ export default async function RootLayout({
         />
       </head>
       <body className={`${avanirLTStdFont.variable} ${bigCaslonFont.variable} `}>
-        <DirectionProvider detectDirection>
-          <ThemeProvider>
-            {children}
-          </ThemeProvider>
-        </DirectionProvider>
+        <ReactQueryProvider>
+          <DirectionProvider detectDirection>
+            <ThemeProvider>
+              {children}
+            </ThemeProvider>
+          </DirectionProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );

@@ -2,22 +2,25 @@
 
 import { Flex } from "@mantine/core"
 import { useGetSizes } from "./useGetSizes";
-import { useGetSrc } from "./useGetSrc";
-import Image from "next/image";
+import { useGetColorLogo } from "./useGetColorLogo";
+import Link from "next/link";
+import dynamic from "next/dynamic";
+
+const LogoSvg = dynamic(() => import("./logoSvg"), { ssr: false })
 
 export const Logo = () => {
 
     const { height, width } = useGetSizes();
-    const logoSrc = useGetSrc();
+    const colorLogo = useGetColorLogo();
 
     return <Flex p="0" m="0" h={height} justify="center" align="center">
-        <Image
-            alt="Wynn Resorts"
-            width={width}
-            height={height}
-            src={logoSrc}
-            priority
-            unoptimized
-        />
+        <Link href="/">
+            <LogoSvg
+                suppressHydrationWarning
+                width={`${width}px`}
+                height={`${height}px`}
+                colorLogo={colorLogo}
+            />
+        </Link>
     </Flex>
 }

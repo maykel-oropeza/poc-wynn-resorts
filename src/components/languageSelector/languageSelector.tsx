@@ -63,10 +63,10 @@ export const LanguageSelector = () => {
                 {
                     colorScheme &&
                     <Flex c={colorScheme === "dark" ? "white" : "black"} w={rem(40)} justify="center" align="center" >
-                        <Text fz="sm" fw="600" lh="sm" lts={rem(1.7)} mr={dir === "rtl" ? 0 : 'xs'} ml={dir === "rtl" ? 'xs' : 0}>
+                        <Text fz="sm" fw="600" lh="sm" c="var(--mantine-color-text)" lts={rem(1.7)} mr={dir === "rtl" ? 0 : 'xs'} ml={dir === "rtl" ? 'xs' : 0}>
                             {languagesSelected}
                         </Text>
-                        <Box w={rem(14)} >
+                        <Box w={rem(14)} c="var(--mantine-color-text)">
                             <ChevronDown />
                         </Box>
                     </Flex>

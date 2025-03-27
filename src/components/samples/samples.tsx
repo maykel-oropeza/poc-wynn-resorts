@@ -13,7 +13,7 @@ export const Samples = () => {
 
         <Button size="3xl" w={rem(222)} variant="outline" mb="xs">JOIN THE NEWSLETTER</Button>
 
-        <Flex direction="column" h={700}>
+        <Flex direction="column" h={400}>
             <Title order={1}>Registration</Title>
             <Title order={2}>Step 1 of 3</Title>
             <Title order={3}>Personal Info</Title>
