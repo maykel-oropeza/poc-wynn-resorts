@@ -1,8 +1,8 @@
-interface CheckProps extends React.ComponentPropsWithoutRef<'svg'> {
+interface ChevronDownProps extends React.ComponentPropsWithoutRef<'svg'> {
     size?: number | string;
 }
 
-export function ChevronDown({ size, style, ...others }: CheckProps) {
+export function ChevronDown({ size, style, ...others }: ChevronDownProps) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
