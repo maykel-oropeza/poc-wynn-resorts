@@ -41,7 +41,7 @@ export const FormSendCode = () => {
     }
 
     return (
-        <Flex direction="column" w="100%">
+        <Flex direction="column" w="100%" mb={rem(60)}>
             <TitleSection>{t("otpVerification")}</TitleSection>
             <Flex direction="column" mt="xl" bg="bgTertiary" justify="center" align="center" p="lg">
                 <Title mb="md" order={2}>{t("sendCode")}</Title>

@@ -81,5 +81,7 @@
     "termsAndConditionsPageTitle": "Terms and Conditions Page",
     "wyndAndRewardsPageTitle": "Wynn and Rewards Page",
     "diningPageTitle": "Dinning Page",
-    "underConstructionPageTitle": "Under Construction Page"
+    "underConstructionPageTitle": "Under Construction Page",
+    "error": "Error",
+    "genericError": "Oops! Something went wrong. Please try again."
 }

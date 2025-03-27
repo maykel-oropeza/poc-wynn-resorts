@@ -51,7 +51,8 @@ export const FormCheckCode = () => {
             resendCode({
                 method: sentCodeMethod!,
                 data,
-            }).then(showNotificationSendCode);
+            }).then(showNotificationSendCode)
+                .catch(showError);
         }
     }
 
@@ -61,15 +62,18 @@ export const FormCheckCode = () => {
 
     const handleNextStep = () => {
         if (userDetails) {
-            registerUser(userDetails).then(() => {
-                nextStep();
-            });
+            registerUser(userDetails)
+                .then(nextStep)
+                .catch(showError);
         }
-
     }
 
     const showError = () => {
-
+        notifications.show({
+            title: t("Error"),
+            message: t("genericError"),
+            withCloseButton: true
+        })
     }
 
     const completeRegister = () => {
@@ -83,9 +87,7 @@ export const FormCheckCode = () => {
     }
 
     return (
-        <Flex direction="column" w="100%">
-
-
+        <Flex direction="column" w="100%" mb={rem(60)}>
             <TitleSection>{t("otpVerification")}</TitleSection>
             <Flex direction="column" mt="xl" bg="bgTertiary" justify="center" align="center" p={{ base: "md", sm: "lg" }}>
                 <Title mb="md" lh={rem(30)} order={2}>{t("pleaseCheckYourEmail", { phoneOrEmail: sentCodeMethod === "email" ? t("checkEmail") : t("checkPhone") })}</Title>

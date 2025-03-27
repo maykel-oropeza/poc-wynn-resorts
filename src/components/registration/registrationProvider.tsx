@@ -76,6 +76,7 @@ export const RegistrationProvider: React.FC<StepProviderProps> = ({ children }) 
             notifications.show({
                 title: t("otpNotification"),
                 message: t("otpNotificationSent", { method: t(keyTranslationchechMethod) }),
+                withCloseButton: true
             })
         }
     }
