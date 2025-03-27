@@ -13,6 +13,13 @@ This project was built with the following stack:
 - [Vitest](https://vitest.dev/) setup with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 - ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
 
+## Installation
+
+Before starting, you need to have Node.js and npm (Node Package Manager) installed on your computer. If you don't have them yet, you can download and install Node.js from https://nodejs.org. Installing Node.js will also install npm.
+the project uses node v22.11.0
+
+you can do so with the `npm install` command. This installs all the dependencies listed in the package.json file.
+
 ## npm scripts
 
 ### Build and dev scripts
@@ -71,6 +78,23 @@ To make some test and see how It will look in production try first `npm run buil
   
 - Success completition of the form.
   <img width="2056" alt="Screenshot 2025-03-27 at 4 05 24 PM" src="https://github.com/user-attachments/assets/a98b5753-8af9-4137-a5e9-9000dfcf812b" />
+
+- Responsiveness: Some Examples
+  - Mobile Menu 
+  <img width="635" alt="Screenshot 2025-03-27 at 4 45 17 PM" src="https://github.com/user-attachments/assets/9705a5a2-210b-400a-858d-d8a46fa55e6f" />
+
+  - Register Page
+  
+  ![Wynn-Resorts-Test--03-27-2025_04_45_PM (1)](https://github.com/user-attachments/assets/fabdeaa7-3f26-4115-9a58-6179a6bf1035)
+
+## Features
+
+The theme selector was not part of the initial scope, but a mechanism was implemented to change the theme with a button in the UI, the way to change between themes is through the combination of keys `ctrl+t`. 
+
+<img width="2056" alt="Screenshot 2025-03-27 at 4 39 30 PM" src="https://github.com/user-attachments/assets/08bed249-efc7-4326-996b-fce3dc21b3c8" />
+
+
+
 
   
 
